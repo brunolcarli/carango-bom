@@ -61,8 +61,6 @@
                                     <i class="fas fa-trash" title="Excluir"></i>
                                 </span>
                             </td>
-                            <!-- <td><i class="fas fa-edit"></i></td>
-                            <td><i class="fas fa-trash"></i></td> -->
                         </tr>
                     </tbody>
                 </table>
