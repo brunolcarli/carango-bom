@@ -1,6 +1,7 @@
 import HomeView from '@/views/HomeView.vue'
 import Login from '@/views/Login.vue'
 import Vehicles from '@/views/Vehicles.vue'
+import FormVehicles from '@/views/FormVehicles.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/vehicles',
       name: 'vehicles',
       component: Vehicles
+    },
+    {
+      path: '/formVehicles',
+      name: 'formVehicles',
+      component: FormVehicles
     }
   ]
 })
