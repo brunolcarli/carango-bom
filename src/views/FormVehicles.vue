@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
-        <div class="row align-items-center vh-100">
-            <h3 class="text-center">Cadastro de veículos</h3>
+    <div class="d-flex justify-content-center shadow">
+        <div class="row align-items-center vh-100 ">
+            <h3 class="text-center shadow">Cadastro de veículos</h3>
             <form>
                 <div class="row mb-3">
                     <select class="form-select" aria-label="Default select example">
@@ -22,8 +22,8 @@
                 </div>
                 <div class="row">
                     <div class="col d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary m-2">Cadastrar</button>
-                        <button type="button" class="btn btn-primary m-2">Cancelar</button>
+                        <button type="submit" class="btn btn-dark w-50 m-3">Cadastrar</button>
+                        <button type="button" class="btn btn-dark w-50 m-3">Cancelar</button>
                     </div>
                 </div>
             </form>
@@ -34,3 +34,12 @@
 <script setup lang="ts">
 
 </script>
+
+<style scoped>
+
+.text-center{ 
+    font-family: 'Bebas Neue', cursiva;
+    font-size: 30px;
+     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4)
+}
+</style>
