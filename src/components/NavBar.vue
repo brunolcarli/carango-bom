@@ -6,7 +6,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse order-first" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a href="#" class="nav-link text-silver">Home</a>
@@ -15,7 +15,7 @@
                         <RouterLink to="/login" class="nav-link text-silver">Entrar</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-silver">Veículos</a>
+                        <RouterLink to="/vehicles" class="nav-link text-silver">Veículos</RouterLink>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link text-silver ">Marcas</a>
