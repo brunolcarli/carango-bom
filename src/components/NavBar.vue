@@ -18,13 +18,13 @@
                         <a href="#" class="nav-link text-silver">Veículos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-silver ">Marcas</a>
+                        <RouterLink to="/form-brand" class="nav-link text-silver ">Marcas</RouterLink>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link text-silver ">Usuários</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-silver ">Dashboard</a>
+                        <RouterLink to="/dashboard" class="nav-link text-silver ">Dashboard</RouterLink>
                     </li>
                     <li class="nav-item">
                         <a @click="logout" class="nav-link text-silver ">Sair</a>

@@ -26,3 +26,10 @@ export function getAuth() {
 export function logout() {
     return sessionStorage.removeItem(propToken);
 }
+
+export function userLog(): Promise<any> {
+    const token = getAuth();
+    
+    return axios.get(`http://localhost:3000/api/usuario?token=${token}`)
+        .then(resp => resp.data.dados);
+}
