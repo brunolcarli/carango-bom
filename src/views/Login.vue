@@ -27,6 +27,7 @@ import * as authenticationService from '../services/authentication-service.js';
 import { useRouter } from 'vue-router';
 import { useUserStore } from '../stores/user-store.js';
 
+
 const router = useRouter();
 const email = ref('');
 const password = ref('');
@@ -34,9 +35,10 @@ const userStore = useUserStore();
 
 function login() {
 	authenticationService.login(email.value, password.value, userStore)
-  .then(() => router.push('/home'))
+  .then(() => router.push('/'))
 		.catch(alert);
 }
+
 
 </script>
   

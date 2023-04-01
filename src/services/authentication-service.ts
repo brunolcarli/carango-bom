@@ -19,7 +19,7 @@ export function login(email: string, senha: string, userStore: any): Promise<any
     });
 }
 
-export function getAuth() {
+export function getAuth(): string | null {
     return sessionStorage.getItem(propToken);
 }
 
@@ -32,4 +32,7 @@ export function userLog(): Promise<any> {
     
     return axios.get(`http://localhost:3000/api/usuario?token=${token}`)
         .then(resp => resp.data.dados);
+}
+export function isAuthenticated(): boolean {
+    return sessionStorage.getItem(propToken) != null;
 }

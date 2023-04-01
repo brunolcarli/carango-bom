@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { Brand } from '@/models/interfaces'
+import type { Brand } from '@/model/brand'
 
 import * as auth from './authentication-service'
 

@@ -7,7 +7,9 @@ export const useUserStore = defineStore('user', {
             nome: ''
         }
     }), 
-
+    getters: {
+        isAuthenticated: state => state.user.email !== ''
+    },
     actions: {
         clean() {
             this.user.email = '';

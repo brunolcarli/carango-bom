@@ -1,32 +1,26 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow ">
         <div class="container-fluid"> 
-            <img src="../assets/logoCarangopng__2_-removebg-preview.png" />
+            <RouterLink to="/"><img src="../assets/logoCarangopng__2_-removebg-preview.png"></RouterLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse order-first row" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse  row" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
-                    <li class="nav-item mx-2">
-                        <a href="#" class="nav-link text-silver">Home</a>
-                    </li>
-                    <li class="nav-item mx-2">
+                    <li v-if="!userStore.isAuthenticated" class="nav-item mx-2">
                         <RouterLink to="/login" class="nav-link text-silver  nav-link-hover">Entrar</RouterLink>
                     </li>
                     <li class="nav-item mx-2">
-                        <RouterLink to="/vehicles" class="nav-link text-silver">Veículos</RouterLink>
+                        <RouterLink to="/veiculos" class="nav-link text-silver">Veículos</RouterLink>
                     </li>
-                    <li class="nav-item">
+                    <li v-if="userStore.isAuthenticated" class="nav-item">
                         <RouterLink to="/form-brand" class="nav-link text-silver ">Marcas</RouterLink>
                     </li>
-                    <li class="nav-item mx-2">
-                        <a href="#" class="nav-link text-silver ">Usuários</a>
-                    </li>
-                    <li class="nav-item">
+                    <li v-if="userStore.isAuthenticated" class="nav-item mx-2">
                         <RouterLink to="/dashboard" class="nav-link text-silver ">Dashboard</RouterLink>
                     </li>
-                    <li class="nav-item mx-2">
+                    <li v-if="userStore.isAuthenticated" class="nav-item mx-2">
                         <a @click="logout" class="nav-link text-silver ">Sair</a>
                     </li>
                 </ul>
@@ -36,10 +30,15 @@
 </template>
 <script setup lang="ts">
 
+import router from '@/router';
 import * as authenticationService from '../services/authentication-service.js';
+import { useUserStore } from '../stores/user-store.js';
+const userStore = useUserStore();
 
 function logout() {
     authenticationService.logout();
+    userStore.clean();
+    router.push('/')
 }
 </script>
 

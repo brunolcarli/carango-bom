@@ -24,12 +24,12 @@ const router = createRouter({
       }
     },
     {
-      path: '/vehicles',
+      path: '/veiculos',
       name: 'vehicles',
       component: Vehicles
     },
     {
-      path: '/formVehicles',
+      path: '/formVeiculos',
       name: 'formVehicles',
       component: FormVehicles
     },
