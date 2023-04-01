@@ -1,32 +1,33 @@
 <template>
-  <div class="d-flex flex-column align-items-center">
-    <h1 class="text-center">Marcas cadastradas</h1>
-    <table class="table table-striped w-75 mt-5">
-      <thead>
+  <section class="container">
+    <div class="row align-content-center justify-content-center mt-5">
+      <div class="col-md-8 p-0">
+        <h1 class="text-center mb-3">Marcas cadastradas</h1>
+    <table class="table table-hover text-center">
+      <thead class="table-dark">
         <tr>
-          <th>Nome da marca</th>
-          <th>Ações</th>
+          <th scope="col">Nome da marca</th>
+          <th scope="col">Ações</th>  
         </tr>
       </thead>
       <tbody>
-        <tr v-if="withoutBrands"><td>Não há marcas cadastradas</td></tr>
         <tr v-for="item in arrBrands">
-          <td>{{ item.nome }}</td>
-          <td>
-            <button class="btn btn-sm btn-danger" @click="deleteBrand(item.id)">
-              <i class="fa-solid fa-trash"></i>
-            </button>
-            <button class="btn btn-sm btn-secondary ms-1" @click="editBrand(item)">
-              <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-          </td>
-        </tr>
+            <td>{{ item.nome }}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" @click="deleteBrand(item.id)">
+                <i class="fas fa-trash"></i>
+              </button>
+              <button class="btn btn-sm btn-secondary ms-1" @click="editBrand(item)">
+                <i class="fas fa-edit" title="Editar"></i>
+              </button>
+            </td>
+          </tr>
       </tbody>
     </table>
-    <RouterLink to="/form-brand" class="nav-link"
-      >Cadastrar nova marca</RouterLink
-    >
+    <RouterLink to="/form-brand" class="btn btn-success mt-4"> Cadastrar nova marca </RouterLink>
   </div>
+    </div>
+  </section>
 </template>
 <script setup lang="ts">
 import type { Brand } from '@/model/brand';
