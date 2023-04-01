@@ -14,7 +14,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import type { Brand } from '@/models/interfaces';
+import type { Brand } from '@/model/brand';
 import { getBrandsApi, saveBrandApi } from '@/services/brand-service';
 import { useBrandStore } from '@/stores/brand-store';
 import { ref } from 'vue';
@@ -24,6 +24,7 @@ const nameBrand = ref('')
 
 function saveBrand() {
   saveBrandApi(nameBrand.value).then(resp => console.log(resp))
+  nameBrand.value = ''
 }
 
 </script>

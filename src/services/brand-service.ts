@@ -11,15 +11,10 @@ export function getBrandsApi(): Promise<Brand[]> {
         .then((brand: Brand[] )=> brand)
 }
 
-export function saveBrandApi(nameBrand: string): Promise<any> {
+export function saveBrandApi(nome: string): Promise<any> {
     let token = auth.getAuth()
-    return axios.post(url, { nameBrand })
-        .then(resp => {
-            console.log(nameBrand)
-            console.log(resp.data)
-            return resp.data.dados
-        
-        })
+    return axios.post(url, { nome })
+        .then(resp => resp.data.dados)
         .catch(e => console.log('erro na requisição'))
 
 }

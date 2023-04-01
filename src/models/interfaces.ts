@@ -1,3 +1,5 @@
+import type { Brand } from "@/model/brand";
+
 export interface Credencials {
     email: string;
     password: string;
@@ -5,11 +7,6 @@ export interface Credencials {
 
 export interface User {
     email: string;
-    name: string;
-}
-
-export interface Brand {
-    id: string;
     name: string;
 }
 

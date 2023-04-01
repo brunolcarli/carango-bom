@@ -11,7 +11,7 @@
       <tbody>
         <tr v-if="withoutBrands"><td>Não há marcas cadastradas</td></tr>
         <tr v-for="item in arrBrands">
-          <td>{{ item.name }}</td>
+          <td>{{ item.nome }}</td>
           <td>
             <button class="btn btn-sm btn-danger" @click="deleteBrand(item.id)">
               <i class="fa-solid fa-trash"></i>
@@ -29,7 +29,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import type { Brand } from '@/models/interfaces';
+import type { Brand } from '@/model/brand';
 import { deleteBrandApi, editBrandApi, getBrandsApi } from '@/services/brand-service';
 import { computed, onMounted, ref } from 'vue';
 
