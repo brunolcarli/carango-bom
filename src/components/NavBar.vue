@@ -17,14 +17,14 @@
                     <li class="nav-item mx-2">
                         <RouterLink to="/vehicles" class="nav-link text-silver">Veículos</RouterLink>
                     </li>
-                    <li class="nav-item mx-2">
-                        <a href="#" class="nav-link text-silver ">Marcas</a>
+                    <li class="nav-item">
+                        <RouterLink to="/form-brand" class="nav-link text-silver ">Marcas</RouterLink>
                     </li>
                     <li class="nav-item mx-2">
                         <a href="#" class="nav-link text-silver ">Usuários</a>
                     </li>
-                    <li class="nav-item mx-2">
-                        <a href="#" class="nav-link text-silver ">Dashboard</a>
+                    <li class="nav-item">
+                        <RouterLink to="/dashboard" class="nav-link text-silver ">Dashboard</RouterLink>
                     </li>
                     <li class="nav-item mx-2">
                         <a @click="logout" class="nav-link text-silver ">Sair</a>

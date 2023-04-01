@@ -10,12 +10,18 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        isAuth: false
+      }
     },
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
+      meta: {
+        isAuth: false
+      }
     },
     {
       path: '/vehicles',
@@ -26,6 +32,30 @@ const router = createRouter({
       path: '/formVehicles',
       name: 'formVehicles',
       component: FormVehicles
+    },
+    {
+      path: '/form-brand',
+      name: 'form-brand',
+      component: () => import('@/views/brand/Form.vue'),
+      meta: {
+        isAuth: true
+      }
+    },
+    {
+      path: '/brands',
+      name: 'brands',
+      component: () => import('@/views/brand/ListBrand.vue'),
+      meta: {
+        isAuth: true
+      }
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('@/views/Dashboard.vue'),
+      meta: {
+        isAuth: false
+      }
     }
   ]
 })
