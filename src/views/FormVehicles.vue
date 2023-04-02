@@ -14,10 +14,10 @@
                     <input type="text" class="form-control" id="model" placeholder="Modelo " v-model="vehicle.modelo">
                 </div>
                 <div class="row mb-3">
-                    <input type="text" class="form-control" id="year" placeholder="Ano" v-model="vehicle.ano">
+                    <input type="number" class="form-control" id="year" placeholder="Ano" v-model="vehicle.ano">
                 </div>
                 <div class="row mb-3">
-                    <input type="text" class="form-control" id="price" placeholder="Valor" v-model="vehicle.valor">
+                    <input type="number" class="form-control" id="price" placeholder="Valor" v-model="vehicle.valor">
                 </div>
                 <div class="row mb-3">
                     <input type="text" class="form-control" id="url" placeholder="URL" v-model="vehicle.imagemUrl">
@@ -26,7 +26,7 @@
                     <div class="col d-flex justify-content-center">
                         <button v-if="props?.id == ''" type="submit" class="btn btn-dark w-50 m-3">Cadastrar</button>
                         <button v-if="props?.id != ''" type="submit" class="btn btn-dark w-50 m-3">Atualizar</button>
-                        <button type="button" class="btn btn-dark w-50 m-3">Cancelar</button>
+                        <button type="button" class="btn btn-dark w-50 m-3" @click="router.push('/veiculos')">Cancelar</button>
                     </div>
                 </div>
             </form>
@@ -41,6 +41,10 @@ import type { Brand } from '@/model/brand';
 import type { Vehicle } from '@/model/vehicle';
 import * as vehiclesService from '../services/vehicles-service';
 import { useRouter } from 'vue-router';
+import { useUserStore } from '../stores/user-store.js';
+
+
+const userStore = useUserStore();
 
 const props = defineProps({
     id: String
