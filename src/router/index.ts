@@ -2,7 +2,7 @@ import HomeView from '@/views/HomeView.vue'
 import Login from '@/views/Login.vue'
 import Vehicles from '@/views/Vehicles.vue'
 import FormVehicles from '@/views/FormVehicles.vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory  } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,8 +29,9 @@ const router = createRouter({
       component: Vehicles
     },
     {
-      path: '/formVeiculos',
+      path: '/formVeiculos/:id?',
       name: 'formVehicles',
+      props: true,
       component: FormVehicles
     },
     {

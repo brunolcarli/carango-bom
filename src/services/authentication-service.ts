@@ -4,6 +4,7 @@ import axios from 'axios';
 const propToken = 'token';
 
 
+
 export function login(email: string, senha: string, userStore: any): Promise<any> {
     const loginData = { email, senha };
     return axios.post('http://localhost:3000/api/login', loginData)
@@ -27,7 +28,7 @@ export function logout() {
     return sessionStorage.removeItem(propToken);
 }
 
-export function userLog(): Promise<any> {
+export function getUserByToken(): Promise<any> {
     const token = getAuth();
     
     return axios.get(`http://localhost:3000/api/usuario?token=${token}`)

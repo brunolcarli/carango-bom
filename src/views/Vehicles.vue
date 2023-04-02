@@ -24,7 +24,7 @@
                             <td>{{ vehicle.valor }}</td>
                             <td v-if="userStore.isAuthenticated">
                                 <span class="icon is-small">
-                                    <i class="fas fa-edit" title="Editar"></i>
+                                    <i class="fas fa-edit" title="Editar" @click="router.push('/formVeiculos/'+ vehicle.id)"></i>
                                 </span>
                             </td>
                             <td v-if="userStore.isAuthenticated">
@@ -72,8 +72,7 @@ function removeVehicle(id: string): void {
         .then(response => listVehicle())
         alert("Item excluído com sucesso!");
     } 
-    // delete passando id
-    // ok alert + atalizar lista
+ 
 }
 
 function listVehicle() : void {

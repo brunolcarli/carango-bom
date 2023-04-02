@@ -37,5 +37,16 @@ axios.interceptors.request.use(config => {
     
     return config
 }) 
+
+
+router.beforeEach((to: any, from: any) => {
+    if (auth.getAuth() && !userStore.isAuthenticated) {
+        auth.getUserByToken()
+        .then(user => {
+            userStore.user = user
+        })
+    }
+});
+
 </script>
 

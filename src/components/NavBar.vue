@@ -35,6 +35,7 @@ import * as authenticationService from '../services/authentication-service.js';
 import { useUserStore } from '../stores/user-store.js';
 const userStore = useUserStore();
 
+console.log(userStore.$state)
 function logout() {
     authenticationService.logout();
     userStore.clean();
