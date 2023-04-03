@@ -25,6 +25,7 @@ export function deleteBrandApi(id: string): Promise<void> {
 }
 
 export function editBrandApi(brand: Brand): Promise<Brand> {
-    return axios.put(`${url}/${brand.id}`)
+    return axios.put(`${url}/${brand.id}`, brand)
         .then(resp => resp.data.dados)
 } 
+

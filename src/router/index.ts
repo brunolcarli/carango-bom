@@ -35,7 +35,7 @@ const router = createRouter({
       component: FormVehicles
     },
     {
-      path: '/form-brand',
+      path: '/form-brand/:id?',
       name: 'form-brand',
       component: () => import('@/views/brand/Form.vue'),
       meta: {

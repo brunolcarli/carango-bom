@@ -17,7 +17,7 @@
               <button class="btn btn-sm btn-danger" @click="deleteBrand(item.id)">
                 <i class="fas fa-trash"></i>
               </button>
-              <button class="btn btn-sm btn-secondary ms-1" @click="editBrand(item)">
+              <button class="btn btn-sm btn-secondary ms-1" @click="editBrand(item.id)">
                 <i class="fas fa-edit" title="Editar"></i>
               </button>
             </td>
@@ -33,15 +33,19 @@
 import type { Brand } from '@/model/brand';
 import { deleteBrandApi, editBrandApi, getBrandsApi } from '@/services/brand-service';
 import { computed, onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 let arrBrands = ref<Brand[]>([]) 
 const withoutBrands = computed(() => arrBrands.value.length === 0)
 onMounted(() => getBrandsApi().then(resp => resp.map(brand => arrBrands.value.push(brand))))
+const router = useRouter()
 
 function deleteBrand(id: string) {
   deleteBrandApi(id).then(() => {arrBrands.value = arrBrands.value.filter(item => item.id !== id)})
 }
 
-function editBrand(item: Brand){
+function editBrand(id: string){
+  router.push(`/form-brand/${id}`)
 }
+
 </script>
