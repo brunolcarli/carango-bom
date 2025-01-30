@@ -20,7 +20,10 @@
     },
     "preview": {
       "name": "preview",
-      "command": "npm run preview"
+      "command": "npm run preview",
+      "preview": {
+        "port": 4173
+      }
     },
     "build-only": {
       "name": "build-only",
